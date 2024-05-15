@@ -10,6 +10,10 @@ RUN apt-get update \
 
 # Install Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Instala Node.js y npm
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get install -y nodejs
+    
 
 # Set working directory
 WORKDIR /app
